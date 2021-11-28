@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/Users/Diego/Projects/Personal/my-remix-app/app/routes/posts/$slug.tsx?browser", "../../../../app/routes/posts/$slug.tsx"],
+  "sourcesContent": ["export { default } from \"/Users/Diego/Projects/Personal/my-remix-app/app/routes/posts/$slug.tsx\";", "import { LoaderFunction, useLoaderData } from \"remix\";\nimport { getPost, MarkedPost } from \"~/post\";\nimport invariant from \"tiny-invariant\";\n\nexport let loader: LoaderFunction = async ({ params }) => {\n    invariant(params.slug, \"expected params.slug\");\n    return getPost(params.slug);\n};\n\nexport default function PostSlug() {\n    let post = useLoaderData<MarkedPost>();\n    return (\n        <div>\n            <div dangerouslySetInnerHTML={{ __html: post.html }} />\n        </div>\n    );\n}\n"],
+  "mappings": ";;;;;;;;;AAAA;;;ACAA;AASe,oBAAoB;AAC/B,MAAI,OAAO;AACX,SACI,oCAAC,OAAD,MACI,oCAAC,OAAD;AAAA,IAAK,yBAAyB,EAAE,QAAQ,KAAK;AAAA;AAAA;",
+  "names": []
+}

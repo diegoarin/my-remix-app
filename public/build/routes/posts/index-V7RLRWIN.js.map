@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/Users/Diego/Projects/Personal/my-remix-app/app/routes/posts/index.tsx?browser", "../../../../app/routes/posts/index.tsx"],
+  "sourcesContent": ["export { default } from \"/Users/Diego/Projects/Personal/my-remix-app/app/routes/posts/index.tsx\";", "import { Link, useLoaderData } from \"remix\";\nimport { Post, getPosts } from \"~/post\";\n\nexport let loader = () => {\n    return getPosts();\n};\n\nexport default function Posts() {\n    let posts: Post[] = useLoaderData<Post[]>();\n    return (\n        <div>\n            <h1>Posts</h1>\n            <ul>\n                {posts.map(post => (\n                <li key={post.slug}>\n                    <Link to={post.slug}>{post.title}</Link>\n                </li>\n                ))}\n            </ul>\n        </div>\n    );\n}\n"],
+  "mappings": ";;;;;;;;;;AAAA;;;ACAA;AAOe,iBAAiB;AAC5B,MAAI,QAAgB;AACpB,SACI,oCAAC,OAAD,MACI,oCAAC,MAAD,MAAI,UACJ,oCAAC,MAAD,MACK,MAAM,IAAI,UACX,oCAAC,MAAD;AAAA,IAAI,KAAK,KAAK;AAAA,KACV,oCAAC,MAAD;AAAA,IAAM,IAAI,KAAK;AAAA,KAAO,KAAK;AAAA;",
+  "names": []
+}
